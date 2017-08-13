@@ -5,12 +5,13 @@
         <h3><%= link_to post.title, post %></h3>
         <%= link_to '読む→', post %>
         <div class="ac-bot">
-          <span><%=	 link_to 'Fav', fav %>:<%= post.fav %></span> |
+          <span><%=	 link_to 'いいね', fav_post_path(post) %>:<%= post.fav %></span> |
           <span>コメント数:<%= post.comments.count %></span> |
           <span>投稿日時:<%= post.created_at.to_s(:published_on) %></span>
         </div>
       </article>
   <% end %>
 </main>
-
-<%= link_to '>>new post', new_post_path %>
+<nav>
+  <%= link_to '>>新しい記事の作成', new_post_path %>
+</nav>

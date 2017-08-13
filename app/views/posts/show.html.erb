@@ -1,19 +1,24 @@
 <article>
   <h2 class="a-title"><%= @post.title %></h2>
-  <time class="a-date">
-    <b>投稿:</b>
-    <%= @post.created_at.to_s %>
-  </time>
   <p class="a-text">
     <%= @post.text %>
   </p>
+  <div class="a-bot">
+    <time class="a-date">
+      <%= @post.created_at.to_s %>
+    </time>
+    |
+    <span>
+      <%= link_to 'いいね', fav_post_path(@post, :page => @post) %>:<%= @post.fav %>
+    </span>
+  </div>
 </article>
 
 <!-- コメント表示部 -->
 <div class="comment-area">
   <h3>コメント</h3>
   <ul class="comment-list">
-      <%= render @post.comments %>
+    <%= render @post.comments %>
   </ul>
   <!-- コメント記入欄 -->
   <h3>コメントを追加</h3>

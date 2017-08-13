@@ -23,7 +23,12 @@ class PostsController < ApplicationController
 
   def fav
     Post.find(params[:id]).increment!(:fav)
-    render :nothing => true
+    if params[:page].nil?
+      redirect_to :action => :index
+    else
+      redirect_to :action => :show
+    end
+
   end
 
   private
