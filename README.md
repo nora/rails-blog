@@ -1,24 +1,24 @@
-# README
+# rails-blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Railsによるブログアプリケーションのサンプルです  
 
-Things you may want to cover:
+## Description
+Ruby on Rails学習の為に作成  
 
-* Ruby version  
-2.4.1
-* System dependencies
+Herokuにデプロイしています [>>heroku app](https://yir-rails-blog.herokuapp.com/ "heroku")
 
-* Configuration
+## How to Installation & Get started
+    $ git clone https://github.com/yirr/rails-blog.git
+    $ cd rails-blog
+    $ bundle install
+    $ rake db:create
+    $ rake db:migrate
+    $ rails s
 
-* Database creation  
-MySQL 5.7
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Version
+### Ruby  
+* 2.4.1
+### Rails
+* 5.0.5
+### Database  
+* MySQL 5.7

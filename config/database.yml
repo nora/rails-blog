@@ -50,8 +50,3 @@ test:
 production:
   <<: *default
   url:      <%= ENV['CLEARDB_DATABASE_URL'] %>
-  host:     <%= ENV['DB_HOSTNAME'] %>
-  port:     <%= ENV['DB_PORT'] %>
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
