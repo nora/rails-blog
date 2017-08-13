@@ -1,9 +1,10 @@
-<p>
-  <strong>コメンター：</strong>
-  <%= comment.commenter %>
-</p>
-
-<p>
-  <strong>コメント：</strong>
-  <%= simple_format comment.body %>
-</p>
+<li>
+  <dl class="commenter">
+    <dt>投稿者：</dt>
+    <dd><%= comment.commenter %></dd>
+  </dl>
+  <dl class="comment">
+    <dt>コメント：</dt>
+    <dd><%= comment.body %></dd>
+  </dl>
+</li>

@@ -1,19 +1,23 @@
-<p>
-  <strong>タイトル：</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>内容：</strong>
-  <%= @post.text %>
-</p>
+<article>
+  <h2 class="a-title"><%= @post.title %></h2>
+  <time class="a-date">
+    <b>投稿:</b>
+    <%= @post.created_at.to_s %>
+  </time>
+  <p class="a-text">
+    <%= @post.text %>
+  </p>
+</article>
 
 <!-- コメント表示部 -->
-<h2>コメント</h2>
-<%= render @post.comments %>
-
-<!-- コメント記入欄 -->
-<h2>コメントを追加</h2>
-<%= render 'comments/form' %>
+<div class="comment-area">
+  <h3>コメント</h3>
+  <ul class="comment-list">
+      <%= render @post.comments %>
+  </ul>
+  <!-- コメント記入欄 -->
+  <h3>コメントを追加</h3>
+  <%= render 'comments/form' %>
+</div>
 
 <%= link_to '戻る', posts_path %>

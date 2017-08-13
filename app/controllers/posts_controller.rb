@@ -21,6 +21,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def fav
+    Post.find(params[:id]).increment!(:fav)
+    render :nothing => true
+  end
 
   private
   def post_params

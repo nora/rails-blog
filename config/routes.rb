@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'welcome/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts do
+    member do
+      get 'fav'
+    end
     resources :comments
   end
-  root 'welcome#index'
+  root 'posts#index'
 end

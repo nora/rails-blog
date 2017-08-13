@@ -1,15 +1,16 @@
-<h1>全ての投稿一覧</h1>
-
-<table>
-  <tr>
-    <th>タイトル</th>
-  </tr>
-
+<h2>全ての投稿一覧</h2>
+<main>
   <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-      </tr>
+      <article>
+        <h3><%= link_to post.title, post %></h3>
+        <%= link_to '読む→', post %>
+        <div class="ac-bot">
+          <span><%=	 link_to 'Fav', fav %>:<%= post.fav %></span> |
+          <span>コメント数:<%= post.comments.count %></span> |
+          <span>投稿日時:<%= post.created_at.to_s(:published_on) %></span>
+        </div>
+      </article>
   <% end %>
-</table>
+</main>
 
 <%= link_to '>>new post', new_post_path %>
