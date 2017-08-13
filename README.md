@@ -6,7 +6,7 @@ Ruby on Railsによるブログアプリケーションのサンプルです
 Ruby on Rails学習の為に作成  
 
 Herokuにデプロイしています [>>heroku app](https://yir-rails-blog.herokuapp.com/ "heroku")  
-※herokuのClearDBではAUTO_INCREMENT_INCREMENTが10に設定される為、idが10づつ増加します
+※herokuのClearDBではAUTO_INCREMENT_INCREMENTが10に設定される為、idが10ずつ増加します
 
 ## How to Installation & Get started
 ```bash
