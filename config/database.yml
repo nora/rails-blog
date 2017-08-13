@@ -49,6 +49,10 @@ test:
 #
 production:
   <<: *default
-  database: blog_production
-  username: rbuser
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+  adapter:  mysql2
+  encoding: utf8
+  host:     <%= ENV['DB_HOSTNAME'] %>
+  port:     <%= ENV['DB_PORT'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
