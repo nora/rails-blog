@@ -5,15 +5,18 @@ Ruby on Railsによるブログアプリケーションのサンプルです
 ## Description
 Ruby on Rails学習の為に作成  
 
-Herokuにデプロイしています [>>heroku app](https://yir-rails-blog.herokuapp.com/ "heroku")
+Herokuにデプロイしています [>>heroku app](https://yir-rails-blog.herokuapp.com/ "heroku")  
+※herokuのClearDBではAUTO_INCREMENT_INCREMENTが10に設定される為、idが10づつ増加します
 
 ## How to Installation & Get started
-    $ git clone https://github.com/yirr/rails-blog.git
-    $ cd rails-blog
-    $ bundle install
-    $ rake db:create
-    $ rake db:migrate
-    $ rails s
+```bash
+$ git clone https://github.com/yirr/rails-blog.git
+$ cd rails-blog
+$ bundle install
+$ rake db:create
+$ rake db:migrate
+$ rails s
+```
 
 ## Version
 ### Ruby  
