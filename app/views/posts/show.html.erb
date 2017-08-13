@@ -7,3 +7,13 @@
   <strong>内容：</strong>
   <%= @post.text %>
 </p>
+
+<!-- コメント表示部 -->
+<h2>コメント</h2>
+<%= render @post.comments %>
+
+<!-- コメント記入欄 -->
+<h2>コメントを追加</h2>
+<%= render 'comments/form' %>
+
+<%= link_to '戻る', posts_path %>

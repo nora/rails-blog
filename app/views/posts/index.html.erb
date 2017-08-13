@@ -3,15 +3,13 @@
 <table>
   <tr>
     <th>タイトル</th>
-    <th>内容</th>
   </tr>
 
   <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.text %></td>
+        <td><%= link_to post.title, post %></td>
       </tr>
   <% end %>
 </table>
 
-<%= link_to 'new post', new_post_path %>
+<%= link_to '>>new post', new_post_path %>
