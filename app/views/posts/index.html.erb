@@ -2,9 +2,9 @@
 <main>
   <% @posts.each do |post| %>
       <article>
-        <h3><%= link_to post.title, post %></h3>
+        <h3 class="a-title"><%= link_to post.title, post %></h3>
         <%= link_to '読む→', post %>
-        <div class="ac-bot">
+        <div class="a-bot">
           <span><%=	 link_to 'いいね', fav_post_path(post) %>:<%= post.fav %></span> |
           <span>コメント数:<%= post.comments.count %></span> |
           <span>投稿日時:<%= post.created_at.to_s(:published_on) %></span>
