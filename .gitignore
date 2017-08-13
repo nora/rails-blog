@@ -8,7 +8,7 @@
 /.bundle
 
 # IDE
-.idea/
+.idea
 
 # Ignore all logfiles and tempfiles.
 /log/*
