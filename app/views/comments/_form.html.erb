@@ -1,15 +1,16 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
-    <p>
-      <%= f.label :commenter, '投稿者' %><br/>
-      <%= f.text_field :commenter %>
-    </p>
+<div class="comment-form-area">
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+      <div class="commenter-area">
+        <%= f.label :commenter, '投稿者' %>
+        <%= f.text_field :commenter, class: 'commenter' %>
+      </div>
 
-    <p>
-      <%= f.label :body, 'コメント' %><br/>
-      <%= f.text_area :body, cols: 60, rows: 3 %>
-    </p>
+      <div>
+        <%= f.text_area :body, cols: 60, rows: 3, class: 'comment-text', placeholder: 'コメントを入力してください' %>
+      </div>
 
-    <p>
-      <%= f.submit '投稿' %>
-    </p>
-<% end %>
+      <div class="btn-area">
+        <%= f.submit '投稿' %>
+      </div>
+  <% end %>
+</div>

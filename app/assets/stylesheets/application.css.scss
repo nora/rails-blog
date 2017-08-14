@@ -12,6 +12,11 @@
 
  * tree -> directory 直下しか読み込まないようにする
  * require_tree .
- *= require_directory .
- *= require_self
+ * require_directory .
+ * require_self
  */
+
+@import "reset";
+@import "common-mixin";
+@import "common";
+@import "partials/*";

@@ -1,0 +1,114 @@
+@mixin posts-main{
+  padding: 32px 18px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@mixin posts-article{
+  display: flex;
+  flex-direction: column;
+
+  min-height: 200px;
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: white;
+  box-shadow: 2px 5px 5px #e4e4e4;
+}
+main.posts,
+main.show-a{
+  @include posts-main;
+  article.show-article{
+    min-height:300px!important;
+    margin-bottom: 80px!important;
+  }
+  article{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 200px;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 2px 5px 5px #e4e4e4;
+    header{
+      .a-title{
+        font-size: 20px;
+        margin-bottom: 2em;
+      }
+      .more-link{
+        color: #e1122a;
+        font-size: 16px;
+        padding-left: .6em;
+      }
+    }
+    div.a-bot{
+      display: flex;
+      flex: auto;
+      flex-direction: column-reverse;
+      position: relative;
+      ul{
+        display: flex;
+        align-items: center;
+        li{
+          margin-right: 1em;
+          time{
+            @include create-at;
+          }
+        }
+      }
+    }
+  }
+}
+main.new-post{
+  @include posts-main;
+  div.card{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 300px;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 2px 5px 5px #e4e4e4, -2px -2px 4px #e4e4e4;
+
+    h3{
+      font-size: 30px;
+      margin:20px 0 30px;
+      text-align: center;
+      color: #5a5a5a;
+    }
+    form{
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      div label{
+        display: block;
+        font-weight: bold;
+        font-size: 1em;
+        margin-bottom: .4em;
+      }
+      .title{
+        margin-right:auto;
+        margin-bottom: 1em;
+        max-width: 400px;
+
+        input{
+          width: 100%;
+          @include form-input-common;
+        }
+      }
+      .naiyou {
+        margin-bottom: 1em;
+        textarea {
+          width: 100%;
+          @include form-input-common;
+        }
+      }
+      .btn-area{
+        text-align: center;
+        input{
+
+        }
+      }
+    }
+  }
+}

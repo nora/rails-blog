@@ -1,0 +1,20 @@
+//SCSS
+$main-color : #f25f70;
+
+@mixin flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin create-at{
+  color: #ccc;
+  font-size: .9em;
+}
+
+@mixin form-input-common{
+  border: 1px solid #c9c9c9;
+  box-shadow: 1px 1px 2px rgba( 0, 0, 0, 0.12 ) inset;
+  max-width: 100%;
+  font-size: 1em;
+  padding: 2px .6em;
+}

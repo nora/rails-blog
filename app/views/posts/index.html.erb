@@ -1,18 +1,26 @@
-<h2>全ての投稿一覧</h2>
-<main>
+<main class="posts">
   <% @posts.each do |post| %>
       <article>
-        <h3 class="a-title"><%= link_to post.title, post %></h3>
-        <%= link_to '読む→', post %>
+        <header>
+          <h3 class="a-title"><%= link_to post.title, post %></h3>
+          <%= link_to '記事を読む→', post , class: 'more-link'  %>
+        </header>
         <div class="a-bot">
-          <span><%=	 link_to 'いいね', fav_post_path(post) %>:<%= post.fav %></span> |
-          <span>コメント数:<%= post.comments.count %></span> |
-          <span>投稿日時:<%= post.created_at.to_s(:published_on) %></span>
+          <ul>
+            <li class="fav-area">
+              <%=	link_to 'いいね', fav_post_path(post), class: 'fav-btn' %>
+              <span class="fav-num"><%= post.fav %></span>
+            </li>
+            <li>コメント(<%= post.comments.count %>)</li>
+            <li>
+              <time>投稿日時:<%= post.created_at.to_s(:published_on) %></time>
+            </li>
+          </ul>
         </div>
       </article>
   <% end %>
 </main>
-<hr>
-<nav>
-  <%= link_to '>>新しい記事の作成', new_post_path %>
-</nav>
+
+<footer>
+
+</footer>

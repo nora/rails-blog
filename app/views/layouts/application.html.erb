@@ -2,6 +2,9 @@
 <html lang="ja">
 <head>
   <title>さわやか3組</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content=IE=edge">
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,10 +12,22 @@
 </head>
 
 <body>
-<header>
-  <h1>さわやか3組</h1>
-</header>
+<div id="wrap">
+  <header class="main-header">
+    <div class="title">
+      <h1><a href="/">さわやか3組</a></h1>
+      <h2>いってみよう やってみよう</h2>
+    </div>
+    <nav class="h-nav">
+      <ul>
+        <li><%= link_to 'TOP',posts_path %></li>
+        <li><%= link_to 'NEW POST',new_post_path %></li>
+        <li><%= link_to 'GitHub', 'https://github.com/yirr/rails-blog' %></li>
+      </ul>
+    </nav>
+  </header>
 
-<%= yield %>
+  <%= yield %>
+</div>
 </body>
 </html>

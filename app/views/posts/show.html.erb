@@ -1,28 +1,39 @@
-<article>
-  <h2 class="a-title"><%= @post.title %></h2>
-  <p class="a-text">
-    <%= @post.text %>
-  </p>
-  <div class="a-bot">
-    <time class="a-date">
-      <%= @post.created_at.to_s %>
-    </time>
-    |
-    <span>
-      <%= link_to 'いいね', fav_post_path(@post, :page => @post) %>:<%= @post.fav %>
-    </span>
+<main class="show-a">
+  <article class="show-article">
+    <header>
+      <h3 class="a-title"><%= @post.title %></h3>
+    </header>
+    <p class="a-text">
+      <%= @post.text %>
+    </p>
+    <div class="a-bot">
+      <ul>
+        <li class="fav-area">
+          <%= link_to 'いいね', fav_post_path(@post, :page => @post), class: 'fav-btn' %>
+          <span class="fav-num"><%= @post.fav %></span>
+        </li>
+        <li>コメント(<%= @post.comments.count %>)</li>
+        <li>
+          <time><%= @post.created_at.to_s %></time>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- コメント表示部 -->
+  <div class="comment-area">
+    <div class="comment-disp-area">
+      <h3>コメント</h3>
+      <% if @post.comments.count == 0 %>
+          <p class="no-comment">コメントはありません</p>
+      <% else %>
+          <ul class="comment-list">
+            <%= render @post.comments %>
+          </ul>
+      <% end %>
+    </div>
+    <!-- コメント記入欄 -->
+    <h3>コメントを残す</h3>
+    <%= render 'comments/form' %>
   </div>
-</article>
-
-<!-- コメント表示部 -->
-<div class="comment-area">
-  <h3>コメント</h3>
-  <ul class="comment-list">
-    <%= render @post.comments %>
-  </ul>
-  <!-- コメント記入欄 -->
-  <h3>コメントを追加</h3>
-  <%= render 'comments/form' %>
-</div>
-
-<%= link_to '戻る', posts_path %>
+</main>

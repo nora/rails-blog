@@ -1,10 +1,8 @@
 <li>
+  <p class="comment"><%= comment.body %></p>
   <dl class="commenter">
     <dt>投稿者：</dt>
     <dd><%= comment.commenter %></dd>
   </dl>
-  <dl class="comment">
-    <dt>コメント：</dt>
-    <dd><%= comment.body %></dd>
-  </dl>
+  <time><%= comment.created_at.to_s %></time>
 </li>
